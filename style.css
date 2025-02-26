@@ -22,7 +22,7 @@
     --hello: #eeeeee;
     --projects-hover: #ff9751;
   }
-  /* Глобальные стили */
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Roboto', sans-serif;
@@ -39,7 +39,6 @@
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   
-  /* Анимация появления */
   .animate {
     opacity: 0;
     transform: translateY(20px);
@@ -50,7 +49,7 @@
     transform: translateY(0);
   }
   
-  /* Header и навигация */
+
   header {
     position: fixed;
     top: 0;
@@ -69,7 +68,7 @@
   ul#nav-menu {
     list-style: none;
     display: flex;
-    margin-right: auto; /* ссылки слева */
+    margin-right: auto; 
     gap: 20px;
   }
   ul#nav-menu li a {
@@ -133,7 +132,6 @@
     ul#nav-menu { display: none; }
   }
   
-  /* Hero секция */
   .hero {
     height: 100vh;
     background: linear-gradient(135deg, var(--bg), var(--hello));
@@ -158,7 +156,6 @@
   }
   .hero .cta:hover { opacity: 0.9; }
   
-  /* Секции */
   section {
     padding: 100px 40px;
     background: var(--section-bg);
@@ -181,7 +178,6 @@
   }
   .parallax { background-attachment: fixed; }
   
-  /* Секция "О нас" */
   #about .about-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -224,7 +220,6 @@
   }
   .team-member:hover .extra-info { bottom: 0; }
   
-  /* Секция "Наши проекты" */
   #projects .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -257,7 +252,6 @@
   }
   .project-info button:hover { background: var(--cta-bg); opacity: 0.9; }
   
-  /* Секция "Как мы работаем" – вертикальный таймлайн */
   #how-we-work {
     background: var(--section-bg);
   }
@@ -307,7 +301,6 @@
     transform: translateY(-5px);
   }
   
-  /* Секция "Кодинг лаборатория" */
   #code-lab .code-container {
     background: var(--block-bg);
     padding: 20px;
@@ -323,7 +316,6 @@
   }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   
-  /* Секция "Контакты" – современная форма */
   #contact .contact-container {
     max-width: 600px;
     margin: 0 auto;
@@ -377,7 +369,6 @@
   #contact .social-icons a:hover { transform: scale(1.2); }
   #contact #map { margin-top: 20px; text-align: center; }
   
-  /* Footer */
   footer {
     background: #000;
     text-align: center;
@@ -385,7 +376,6 @@
     color: #aaa;
   }
   
-  /* Media Queries для адаптивности */
   @media (max-width: 1024px) {
     .container {
       width: 90%;
@@ -398,6 +388,18 @@
   
   @media (max-width: 768px) {
     header { padding: 10px 20px; }
+        .header-controls {
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          gap: 10px;
+          margin-left: 10px;
+        }
+        .login-btn {
+          flex-shrink: 1;
+          padding: 8px 14px;
+          font-size: 0.9em;
+          white-space: nowrap;
+        }
     ul#nav-menu { display: none; }
     section { padding: 70px 20px; }
     .hero h1 { font-size: 3em; }
@@ -409,9 +411,15 @@
     section { padding: 60px 15px; }
     .hero h1 { font-size: 2.8em; }
     .hero p { font-size: 1.1em; }
-      .login-btn {
+    .login-btn {
         padding: 8px 16px;
         font-size: 0.9em;
         white-space: nowrap;
     }
+      
+  }
+  @media (max-width: 390px) {
+  .theme-switch {
+    display: none;
+  }
   }
