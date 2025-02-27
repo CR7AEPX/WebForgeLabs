@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebForgeLabs</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">WebForgeLabs</div>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="#hero">Главная</a></li>
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#how-we-work">Как мы работаем</a></li>
+        <li><a href="#code-lab">Кодинг лаборатория</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+      <div class="header-controls">
+        <label class="theme-switch">
+          <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+          <span class="slider"></span>
+        </label>
+        <button class="login-btn" >Войти</button>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Hero секция -->
+  <section class="hero" id="hero">
+    <h1 class="animate">WebForgeLabs</h1>
+    <p class="animate">Инновации. Технологии. Будущее.</p>
+    <button class="cta animate" onclick="scrollToSection('projects')">Посмотреть проекты</button>
+  </section>
+  
+  <!-- О нас -->
+  <section id="about">
+    <h2 class="section-title animate">О нас</h2>
+    <div class="about-content animate">
+      <p>WebForgeLabs — это команда экспертов, сочетающая инновации и технологии для создания решений, которые меняют мир. Наша миссия – воплощать смелые идеи в жизнь.</p>
+      <div class="team">
+        <div class="team-member animate">
+          <img src="https://via.placeholder.com/250x250" alt="Иван Иванов">
+          <div class="info">
+            <h3>Иван Иванов</h3>
+            <p>CEO</p>
+          </div>
+          <div class="extra-info">
+            <p>Ведущий стратег и лидер команды.</p>
+          </div>
+        </div>
+        <div class="team-member animate">
+          <img src="https://via.placeholder.com/250x250" alt="Мария Петрова">
+          <div class="info">
+            <h3>Мария Петрова</h3>
+            <p>CTO</p>
+          </div>
+          <div class="extra-info">
+            <p>Эксперт в области технологий и инноваций.</p>
+          </div>
+        </div>
+        <div class="team-member animate">
+          <img src="https://via.placeholder.com/250x250" alt="Алексей Смирнов">
+          <div class="info">
+            <h3>Алексей Смирнов</h3>
+            <p>Lead Developer</p>
+          </div>
+          <div class="extra-info">
+            <p>Мастер кодинга и технических решений.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Проекты -->
+  <section id="projects">
+    <h2 class="section-title animate">Наши проекты</h2>
+    <div class="projects-grid" id="projectsGrid">
+    </div>
+  </section>
+  
+  <!-- Как мы работаем (таймлайн) -->
+  <section id="how-we-work">
+    <h2 class="section-title animate">Как мы работаем</h2>
+    <div class="timeline-container animate">
+      <div class="timeline-step">
+        <div class="timeline-marker">1</div>
+        <div class="timeline-content">
+          <h3>Исходная идея</h3>
+          <p>Генерация уникальных концепций и идей.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker">2</div>
+        <div class="timeline-content">
+          <h3>Планирование</h3>
+          <p>Разработка стратегии и детального плана действий.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker">3</div>
+        <div class="timeline-content">
+          <h3>Прототипирование</h3>
+          <p>Создание рабочих моделей и макетов.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker">4</div>
+        <div class="timeline-content">
+          <h3>Разработка</h3>
+          <p>Кодирование и воплощение идеи в продукт.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker">5</div>
+        <div class="timeline-content">
+          <h3>Тестирование</h3>
+          <p>Проверка качества, устранение ошибок и оптимизация.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker">6</div>
+        <div class="timeline-content">
+          <h3>Запуск</h3>
+          <p>Воплощение проекта в жизнь и поддержка на всех этапах.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Кодинг лаборатория -->
+  <section id="code-lab">
+    <h2 class="section-title animate">Кодинг лаборатория</h2>
+    <div class="code-container animate">
+      <pre>
+// Пример интерактивного кода для демонстрации
+function helloWebForce() {
+  console.log("Добро пожаловать в WebForgeLabs!");
+}
+helloWebForce();
+      </pre>
+    </div>
+  </section>
+  
+  <!-- Контакты -->
+  <section id="contact">
+    <h2 class="section-title animate">Контакты</h2>
+    <div class="contact-container animate">
+      <form class="contact-form">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="email" placeholder="Ваш Email" required>
+        <textarea rows="5" placeholder="Ваше сообщение" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+      <div class="social-icons">
+        <i class='bx bxl-instagram'></i>
+        <i class='bx bxl-discord'></i>
+        <i class='bx bxl-telegram'></i>
+      </div>
+      <div id="map">
+        <iframe src="https://maps.google.com/maps?q=Moscow&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 WebForgeLabs. Все права защищены.</p>
+  </footer>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

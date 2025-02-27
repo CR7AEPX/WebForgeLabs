@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Авторизация</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111;
+      --text: #ddd;
+      --block-bg: #181818;
+      --btn-bg: #0f0;
+      --btn-text: #000;
+      --shadow-main: 0px 6px 16px rgba(0, 0, 0, 0.6);
+      --shadow-btn: 0px 3px 8px rgba(0, 217, 0, 0.343);
+      --border-radius: 14px;
+    }
+
+    body.light {
+      --bg: #f0f0f0;
+      --text: #333;
+      --block-bg: #eee;
+      --btn-bg: #ff6600;
+      --btn-text: #fff;
+      --shadow-main: 0px 4px 12px rgba(0, 0, 0, 0.3);
+      --shadow-btn: 0px 2px 6px #ff6600;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .auth-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      background: var(--block-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-main);
+      width: 320px;
+    }
+
+    .auth-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 14px;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 12px 0;
+      box-shadow: var(--shadow-btn);
+      transition: transform 0.2s ease-out;
+    }
+
+    .auth-button:hover {
+      transform: scale(1.03);
+    }
+
+    .auth-button i {
+      margin-right: 8px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <button class="auth-button" id="googleSignIn">
+      <i class='bx bxl-google'></i>
+      <span>Продолжить с Google</span>
+    </button>
+    <button class="auth-button" id="githubSignIn">
+      <i class='bx bxl-github'></i>
+      <span>Продолжить с GitHub</span>
+    </button>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script>
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light");
+    }
+    const firebaseConfig = {
+      apiKey: "AIzaSyANMc165RADNQAAFqQ-m9FAyBzjXXLpmrs",
+      authDomain: "login-sign-id.firebaseapp.com",
+      projectId: "login-sign-id",
+      storageBucket: "login-sign-id.appspot.com",
+      messagingSenderId: "756728671188",
+      appId: "1:756728671188:web:56566c29a3c175ef984441",
+      measurementId: "G-9V5EY62X8W"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+    const githubProvider = new firebase.auth.GithubAuthProvider();
+
+    document.getElementById('googleSignIn').addEventListener('click', () => {
+      auth.signInWithPopup(googleProvider)
+        .then(result => {
+          console.log("Вход через Google:", result.user);
+          window.location.href = "main.html";
+        })
+        .catch(error => {
+          console.error("Ошибка входа через Google:", error);
+        });
+    });
+
+    document.getElementById('githubSignIn').addEventListener('click', () => {
+      auth.signInWithPopup(githubProvider)
+        .then(result => {
+          console.log("Вход через GitHub:", result.user);
+          window.location.href = "main.html";
+        })
+        .catch(error => {
+          console.error("Ошибка входа через GitHub:", error);
+        });
+    });
+  </script>
+</body>
+</html>
